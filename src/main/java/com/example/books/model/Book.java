@@ -1,5 +1,8 @@
 package com.example.books.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Book {
 
     private int id;
@@ -8,12 +11,15 @@ public class Book {
     private String editorial;
     private Integer year;
 
+    private List<Review> reviews;
+
     public Book(int id, String title, String resume, String editorial, Integer year) {
         this.id = id;
         this.title = title;
         this.resume = resume;
         this.editorial = editorial;
         this.year = year;
+        this.reviews = new ArrayList<>();
     }
 
 
@@ -43,5 +49,17 @@ public class Book {
 
     public int getId() {
         return id;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public void addReview(Review review) {
+        this.reviews.add(review);
     }
 }
